@@ -1,0 +1,126 @@
+public void issue1()
+{
+    System.out.println("请输入年");
+		Scanner scan = new Scanner(System.in);
+		int year=scan.nextInt();
+		System.out.println("请输入月");
+		int month=scan.nextInt();
+		System.out.println("请输入日");
+		int day=scan.nextInt();
+		int res=0;		
+		
+		int[] dayOfmonth= {31,28,31,30,31,30,31,31,30,31,30,31};
+		if(year%4==0) {
+			dayOfmonth[1]=29;
+		}
+		for(int i=0;i<month-1;i++)
+		{
+			res+=dayOfmonth[i];
+		}
+		res+=day;
+		System.out.println("这是"+year+"年的第"+res+"天");
+		
+}
+
+public void issue2()
+{
+`int sum = 0;
+  int i = 2,j = 1;
+  for(i = 2; i <= 10000; i++)
+  {
+   for(j = 1; j < i; j++)
+   {
+    if(i%j == 0)
+     sum = sum+j;
+   }
+   if(sum == i)
+    System.out.println(" " + sum);
+   sum = 0;
+  }
+ }
+}
+
+public void issue3()
+{
+   int blueball=0;
+		ArrayList<Integer> redBall = new ArrayList();
+		while(redBall.size()<6)
+		{
+			int temp=(int) (Math.random() * 33);
+			if(temp==0||redBall.contains(temp))
+			{
+				continue;
+			}
+			redBall.add(temp);
+		}
+		while(blueball==0)
+		{
+			blueball=(int) (Math.random() * 33);
+		}
+		System.out.println(redBall);
+		System.out.println(blueball);	 
+}
+
+public class issue4   {	
+	public static void main(String[] args)
+	{		
+		int[] arr=new int[10];
+		int count=0;
+		
+	}	
+	public void add(int[] arr,int num,int count)
+	{
+		if(count<arr.length*0.8)
+		{
+			arr[count+1]=num;
+		}
+		else
+		{
+			int len=arr.length;
+			len*=1.5;
+			int[] newArr=new int[len];
+			for(int i=0;i<arr.length;i++)
+			{
+				newArr[i]=arr[i];
+			}
+			arr=newArr;
+		}
+	}	
+}
+
+public void issue5()
+{
+char board[][]=new char[17][17];
+		for(int i=0;i<17;i++)
+		{
+			for(int j=0;j<17;j++)
+			{
+				if(i==0&&j==0)
+				{
+					board[i][j]=' ';
+				}
+				else if(i==0||j==0)
+				{
+					if(i+j<=9)
+					{
+						board[i][j]=(char)(i+j+48);
+					}
+					else
+					{
+						board[i][j]=(char)(i+j-10+97);
+					}
+				}
+				else board[i][j]='+';
+			}
+		}
+		for(int i=0;i<17;i++)
+		{
+			for(int j=0;j<17;j++)
+			{
+				System.out.print(board[i][j]);
+			}
+			System.out.print('\n');
+			
+		}		
+	}	
+}
